@@ -83,7 +83,7 @@ export default function ClothingStoreLanding() {
                   viewport={{ once: false }}
                 >
                   <img
-                    src={`/placeholder.svg?height=300&width=400`}
+                    src={`./assets/product0${item}.jpg`}
                     alt={`Product ${item}`}
                     className="w-full h-64 object-cover"
                   />
