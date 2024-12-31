@@ -85,17 +85,9 @@ export default function ClothingStoreLanding() {
                   <img
                     src={`./assets/product0${item}.jpg`}
                     alt={`Product ${item}`}
-                    className="w-full h-64 object-cover"
+                    className="w-full h-full object-cover hover:"
                   />
-                  <div className="p-4 text-card-foreground">
-                    <h3 className="text-xl font-semibold mb-2">
-                      Product {item}
-                    </h3>
-                    <p className="text-muted-foreground mb-4">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </p>
-                    <Button>Add to Cart</Button>
-                  </div>
+                  
                 </motion.div>
               ))}
             </div>
