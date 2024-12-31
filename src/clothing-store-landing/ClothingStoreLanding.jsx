@@ -107,7 +107,7 @@ export default function ClothingStoreLanding() {
                     <div className="relative overflow-hidden">
                       <img
                         className="h-96 w-full object-cover"
-                        src={`./assets/product0${item}.jpg`}
+                        src={`./src/assets/product0${item}.jpg`}
                         alt=""
                       />
                       <div className="absolute h-auto w-full flex items-end justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
