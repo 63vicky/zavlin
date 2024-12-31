@@ -11,6 +11,7 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import { ThreeDModelCarousel } from './3d-model-carousel';
+import Autoplay from 'embla-carousel-autoplay';
 
 const HeroSlide = ({ title, description, buttonText, modelIndex }) => (
   <div className="flex flex-col md:flex-row items-center justify-between h-full">
@@ -66,12 +67,16 @@ export function HeroCarousel() {
       modelIndex: 2,
     },
   ];
+  const plugin = React.useRef(Autoplay({ delay: 5000 }));
 
   return (
     <Carousel
       opts={{
         watchDrag: false,
       }}
+      plugins={[plugin.current]}
+      onMouseEnter={plugin.current.stop}
+      onMouseLeave={plugin.current.play}
       className="w-full"
     >
       <CarouselContent>
