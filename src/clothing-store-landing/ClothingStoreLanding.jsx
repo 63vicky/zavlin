@@ -26,6 +26,7 @@ import { ThemeProvider } from './Theme-provider';
 import { ThemeToggle } from './Theme-toggle';
 import Navbar from './Navbar';
 import { HeroCarousel } from './HeroCarousel';
+import img1 from '../assets/product01.jpg';
 
 // 3D Model component
 function Model() {
@@ -107,7 +108,7 @@ export default function ClothingStoreLanding() {
                     <div className="relative overflow-hidden">
                       <img
                         className="h-96 w-full object-cover"
-                        src={`./src/assets/product0${item}.jpg`}
+                        src={img1}
                         alt=""
                       />
                       <div className="absolute h-auto w-full flex items-end justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
