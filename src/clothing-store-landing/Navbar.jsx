@@ -40,34 +40,42 @@ export default function Navbar() {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <h1
           className={`text-2xl font-bold transition-colors duration-300 ${
-            isScrolled ? 'text-foreground' : 'text-primary-foreground'
+            isScrolled ? 'text-foreground' : 'text-foreground/60'
           }`}
         >
           FashionFusion
         </h1>
         <nav className="hidden md:flex space-x-4">
           {['Home', 'Shop', 'About', 'Contact'].map((item) => (
-            <a
-              key={item}
-              href="#"
-              className={`transition-colors duration-300 ${
-                isScrolled
-                  ? 'text-foreground hover:text-primary'
-                  : 'text-primary-foreground hover:text-primary-foreground/80'
-              }`}
-            >
-              {item}
-            </a>
+            <div key={item} className="relative group">
+              <a
+                href="#"
+                className={`transition-colors duration-300 font-semibold ${
+                  isScrolled
+                    ? 'text-foreground hover:text-primary/70'
+                    : 'text-foreground/70 hover:text-foreground'
+                }`}
+              >
+                {item}
+                <span
+                  className={`block max-w-0 group-hover:max-w-full transition-all duration-500 h-[2px] ${
+                    isScrolled
+                      ? 'bg-foreground group-hover:bg-primary/70'
+                      : 'bg-foreground/70 group-hover:bg-foreground'
+                  }`}
+                ></span>
+              </a>
+            </div>
           ))}
         </nav>
         <div className="flex items-center space-x-4">
           <ThemeToggle
-            className={isScrolled ? '' : 'text-primary-foreground'}
+            className={isScrolled ? 'text-foreground' : 'text-foreground/70'}
           />
           <Button
             variant="ghost"
             size="icon"
-            className={isScrolled ? '' : 'text-primary-foreground'}
+            className={isScrolled ? 'text-foreground' : 'text-foreground/70'}
           >
             <ShoppingBag className="h-6 w-6" />
           </Button>
@@ -77,7 +85,7 @@ export default function Navbar() {
                 variant="ghost"
                 size="icon"
                 className={`md:hidden ${
-                  isScrolled ? '' : 'text-primary-foreground'
+                  isScrolled ? 'text-foreground' : 'text-foreground/70'
                 }`}
               >
                 <Menu className="h-6 w-6" />
@@ -90,8 +98,19 @@ export default function Navbar() {
               </SheetHeader>
               <nav className="flex flex-col space-y-4 mt-6">
                 {['Home', 'Shop', 'About', 'Contact'].map((item) => (
-                  <a key={item} href="#" className="hover:text-primary">
+                  <a
+                    key={item}
+                    href="#"
+                    className="hover:text-primary relative group w-fit mx-auto"
+                  >
                     {item}
+                    <span
+                      className={`block max-w-0 group-hover:max-w-full transition-all duration-500 h-[2px] ${
+                        isScrolled
+                          ? 'bg-foreground group-hover:bg-primary/70'
+                          : 'bg-foreground/70 group-hover:bg-foreground'
+                      }`}
+                    ></span>
                   </a>
                 ))}
               </nav>

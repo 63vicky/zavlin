@@ -14,10 +14,10 @@ import { ThreeDModelCarousel } from './3d-model-carousel';
 import Autoplay from 'embla-carousel-autoplay';
 
 const HeroSlide = ({ title, description, buttonText, modelIndex }) => (
-  <div className="flex flex-col md:flex-row items-center justify-between h-full">
+  <div className="flex flex-col-reverse md:flex-row items-center justify-between h-full ">
     <div className="md:w-1/2 z-10 select-none">
       <motion.h2
-        className="text-4xl md:text-6xl font-bold mb-4 text-primary-foreground"
+        className="text-4xl md:text-6xl font-bold mb-4 text-primary"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -25,7 +25,7 @@ const HeroSlide = ({ title, description, buttonText, modelIndex }) => (
         {title}
       </motion.h2>
       <motion.p
-        className="text-xl mb-8 text-primary-foreground/90"
+        className="text-xl mb-8 text-primary/90"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}

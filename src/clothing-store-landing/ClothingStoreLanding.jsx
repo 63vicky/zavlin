@@ -56,16 +56,16 @@ export default function ClothingStoreLanding() {
           </div>
         </section>
         {/* Featured Products */}
-        <section className="py-16 bg-muted">
+        <section className="py-16 bg-muted overflow-x-hidden">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold mb-8 text-center">
               Featured Products
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[1, 2, 3].map((item) => (
+              {[1, 2, 3, 4, 5].map((item) => (
                 <motion.div
                   key={item}
-                  className="bg-background rounded-lg shadow-lg overflow-hidden"
+                  className="bg-muted overflow-hidden"
                   initial={{
                     opacity: 0,
                     y: 50,
@@ -82,12 +82,48 @@ export default function ClothingStoreLanding() {
                   transition={{ duration: 0.8 }}
                   viewport={{ once: false }}
                 >
-                  <img
+                  {/* <img
                     src={`./assets/product0${item}.jpg`}
                     alt={`Product ${item}`}
                     className="w-full h-full object-cover hover:"
-                  />
-                  
+                  /> */}
+                  {/* <a
+                    className="relative flex h-80 w-auto overflow-hidden rounded-xl"
+                    href="#"
+                  >
+                    <img
+                      className="peer absolute top-0 right-0 h-full w-full object-cover"
+                      src={`./assets/product0${item}.jpg`}
+                      alt="product image"
+                    />
+                    <img
+                      className="peer peer-hover:bottom-0 absolute -bottom-[20rem] h-full w-full object-cover transition-all delay-100 duration-1000 hover:bottom-0"
+                      src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8c25lYWtlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                      alt="product image"
+                    />
+                  </a> */}
+
+                  <div className="w-full h-fit group">
+                    <div className="relative overflow-hidden">
+                      <img
+                        className="h-96 w-full object-cover"
+                        src={`./assets/product0${item}.jpg`}
+                        alt=""
+                      />
+                      <div className="absolute h-auto w-full flex items-end justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        <button className="text-white py-2 bg-black/40 px-5 w-full">
+                          Add to cart
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex justify-between flex-col items-center px-2 py-1">
+                    <h2 className="mt-1 text-xl capitalize">Straw Hat</h2>
+                    <div>
+                      <del className="text-red-700 text-lg">$49</del>
+                      <p className="text-xl ml-1 inline-block">$35</p>
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </div>
