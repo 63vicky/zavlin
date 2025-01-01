@@ -27,6 +27,9 @@ import { ThemeToggle } from './Theme-toggle';
 import Navbar from './Navbar';
 import { HeroCarousel } from './HeroCarousel';
 import img1 from '../assets/product01.jpg';
+import img2 from '../assets/product02.jpg';
+import img3 from '../assets/product03.jpg';
+import ProductCarousel from './ProductCarousel';
 
 // 3D Model component
 function Model() {
@@ -57,7 +60,7 @@ export default function ClothingStoreLanding() {
           </div>
         </section>
         {/* Featured Products */}
-        <section className="py-16 bg-muted overflow-x-hidden">
+        <section className="py-16 overflow-x-hidden">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold mb-8 text-center">
               Featured Products
@@ -66,7 +69,7 @@ export default function ClothingStoreLanding() {
               {[1, 2, 3, 4, 5].map((item) => (
                 <motion.div
                   key={item}
-                  className="bg-muted overflow-hidden"
+                  className="overflow-hidden"
                   initial={{
                     opacity: 0,
                     y: 50,
@@ -130,9 +133,9 @@ export default function ClothingStoreLanding() {
             </div>
           </div>
         </section>
-
+        <ProductCarousel />
         {/* About Section */}
-        <section className="py-16">
+        <section className="py-16 bg-muted">
           <div className="container mx-auto px-4">
             <motion.div
               className="flex flex-col md:flex-row items-center"
