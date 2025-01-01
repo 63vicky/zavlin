@@ -133,7 +133,7 @@ export default function ClothingStoreLanding() {
             </div>
           </div>
         </section>
-        <ProductCarousel />
+      <ProductCarousel />
         {/* About Section */}
         <section className="py-16 bg-muted">
           <div className="container mx-auto px-4">
