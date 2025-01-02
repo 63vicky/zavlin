@@ -35,16 +35,18 @@ import {
 import { Card, CardContent } from '@/components/ui/card';
 
 // 3D Model component
-function Model() {
-  // const { scene } = useGLTF('/assets/3d/duck.glb');
-  // return <primitive object={scene} scale={2} />;
-
-  return (
-    <mesh>
-      <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color="white" />
-    </mesh>
+export function Model() {
+  const { scene } = useGLTF(
+    'src/assets/tripo_pbr_model_df0d8c31-cdd5-4277-b218-64bb8f8d704b.glb'
   );
+  return <primitive object={scene} scale={6} />;
+
+  // return (
+  //   <mesh>
+  //     <boxGeometry args={[1, 1, 1]} />
+  //     <meshStandardMaterial color="white" />
+  //   </mesh>
+  // );
 }
 
 const products = [
@@ -140,9 +142,10 @@ export default function ClothingStoreLanding() {
         {/* Hero Section with 3D Model */}
 
         <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/20 z-10"></div>
-          <div className="container mx-auto px-4 relative z-20 pt-16">
-            <TimedCarousel />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/20 z-10">
+            <div className="container h-full mx-auto px-4 relative z-20 pt-16">
+              <TimedCarousel />
+            </div>
           </div>
         </section>
         {/* Featured Products */}

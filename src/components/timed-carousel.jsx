@@ -119,19 +119,19 @@ export default function TimedCarousel() {
   const handleMouseLeave = useCallback(() => setIsHovered(false), []);
 
   return (
-    <div
-      className="w-full h-full mx-auto mb-4"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
+    <div className="w-full h-full flex flex-col mx-auto mb-4">
       <Carousel
         setApi={setApi}
         opts={{
           watchDrag: false,
         }}
-        className="w-full"
+        className="w-full h-full"
       >
-        <CarouselContent>
+        <CarouselContent
+          className="relative top-[100%] -translate-y-[50%]"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           {slides.map((slide) => (
             <CarouselItem key={slide.id}>
               <div className="flex flex-col-reverse md:flex-row items-center justify-between h-full ">
@@ -168,13 +168,13 @@ export default function TimedCarousel() {
           ))}
         </CarouselContent>
       </Carousel>
-      <div className="flex justify-center mt-4 space-x-2 md:w-1/2 mx-auto">
+      <div className="flex justify-center mt-4 mb-4 space-x-2 md:w-1/2 mx-auto">
         {slides.map((_, index) => (
           <Button
             key={index}
             variant=""
             size="sm"
-            className={`w-full h-1 p-0 hover:bg-primary-foreground ${
+            className={`w-[80px] flex justify-start h-1 p-0 hover:bg-primary-foreground ${
               currentSlide === index ? 'bg-primary' : ''
             }`}
             onClick={() => goToSlide(index)}
