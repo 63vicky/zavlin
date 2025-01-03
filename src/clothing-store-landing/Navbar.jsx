@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { ShoppingBag, Menu } from 'lucide-react';
+import { ShoppingBag, Menu, Heart, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from './Theme-toggle';
 import {
@@ -46,11 +46,22 @@ export default function Navbar() {
           }`}
         >
           {isScrolled ? (
-            <video width={'50'} height={50} loop="false" autoPlay="true">
+            <video
+              width={'50'}
+              height={50}
+              muted
+              playsInline
+              autoPlay="true"
+              loading="lazy"
+            >
               <source src={LogoVid} type="video/mp4" />
             </video>
           ) : (
-            <img src={Logo} className="max-w-[150px]" />
+            <img
+              src={Logo}
+              className="max-w-[150px] dark:invert"
+              loading="lazy"
+            />
           )}
           {/* {isScrolled ? '' : 'Zevlin'} */}
         </h1>
@@ -84,9 +95,29 @@ export default function Navbar() {
           <Button
             variant="ghost"
             size="icon"
-            className={isScrolled ? 'text-foreground' : 'text-foreground/70'}
+            className={`md:flex hidden ${
+              isScrolled ? 'text-foreground' : 'text-foreground/70'
+            }`}
           >
             <ShoppingBag className="h-6 w-6" />
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            className={`md:flex hidden ${
+              isScrolled ? 'text-foreground' : 'text-foreground/70'
+            }`}
+          >
+            <Heart className="h-6 w-6" />
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            className={`md:flex hidden ${
+              isScrolled ? 'text-foreground' : 'text-foreground/70'
+            }`}
+          >
+            <User className="h-6 w-6" />
           </Button>
           <Sheet>
             <SheetTrigger asChild>
@@ -103,7 +134,35 @@ export default function Navbar() {
             <SheetContent>
               <SheetHeader>
                 <SheetTitle>Menu</SheetTitle>
-                <SheetDescription>Navigate through our store</SheetDescription>
+                <SheetDescription>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className={
+                      isScrolled ? 'text-foreground' : 'text-foreground/70'
+                    }
+                  >
+                    <ShoppingBag className="h-6 w-6" />
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className={
+                      isScrolled ? 'text-foreground' : 'text-foreground/70'
+                    }
+                  >
+                    <Heart className="h-6 w-6" />
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className={
+                      isScrolled ? 'text-foreground' : 'text-foreground/70'
+                    }
+                  >
+                    <User className="h-6 w-6" />
+                  </Button>
+                </SheetDescription>
               </SheetHeader>
               <nav className="flex flex-col space-y-4 mt-6">
                 {['Home', 'Shop', 'About', 'Contact'].map((item) => (

@@ -161,7 +161,10 @@ export default function TimedCarousel() {
                   </motion.div>
                 </div>
                 <div className="md:w-1/2">
-                  <ThreeDModelCarousel initialSlide={slide.modelIndex} />
+                  <ThreeDModelCarousel
+                    key={slide.id}
+                    initialSlide={slide.modelIndex}
+                  />
                 </div>
               </div>
             </CarouselItem>
@@ -179,18 +182,15 @@ export default function TimedCarousel() {
             }`}
             onClick={() => goToSlide(index)}
           >
-            {currentSlide === index && <ProgressBar progress={progress} />}
+            {currentSlide === index && (
+              <div
+                className="bg-background border h-full transition-all duration-100 ease-linear"
+                style={{ width: `${progress}%` }}
+              />
+            )}
           </Button>
         ))}
       </div>
     </div>
   );
 }
-const ProgressBar = ({ progress }) => (
-  <div
-    className="bg-background border h-full transition-all duration-100 ease-linear"
-    style={{ width: `${progress}%` }}
-  />
-);
-
-ProgressBar.displayName = 'ProgressBar';

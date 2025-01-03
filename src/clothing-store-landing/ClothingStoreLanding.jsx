@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Suspense } from 'react';
+import React, { Suspense, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
@@ -33,20 +33,45 @@ import {
   CarouselNext,
 } from '@/components/ui/carousel';
 import { Card, CardContent } from '@/components/ui/card';
+import { useFrame } from '@react-three/fiber';
 
 // 3D Model component
 export function Model() {
   const { scene } = useGLTF(
     '/tripo_pbr_model_df0d8c31-cdd5-4277-b218-64bb8f8d704b.glb'
   );
-  return <primitive object={scene} scale={6} />;
+  const meshRef = useRef();
 
-  // return (
-  //   <mesh>
-  //     <boxGeometry args={[1, 1, 1]} />
-  //     <meshStandardMaterial color="white" />
-  //   </mesh>
-  // );
+  useFrame(() => {
+    if (meshRef.current) {
+      // Rotate around the Y axis
+      meshRef.current.rotation.y += 0.002; // Adjust rotation speed here
+      // Rotate around the X axis
+      // meshRef.current.rotation.x += 0.01;
+      // Rotate around the Z axis
+      // meshRef.current.rotation.z += 0.01;
+    }
+  });
+  return <primitive object={scene} ref={meshRef} scale={6} />;
+}
+
+export function ModelWhite() {
+  const { scene } = useGLTF(
+    '/tripo_pbr_model_2265f9c4-930b-4991-b5d5-a0c7b2ce15c6.glb'
+  );
+  const meshRef = useRef();
+
+  useFrame(() => {
+    if (meshRef.current) {
+      // Rotate around the Y axis
+      meshRef.current.rotation.y += 0.002; // Adjust rotation speed here
+      // Rotate around the X axis
+      // meshRef.current.rotation.x += 0.01;
+      // Rotate around the Z axis
+      // meshRef.current.rotation.z += 0.01;
+    }
+  });
+  return <primitive object={scene} ref={meshRef} scale={6} />;
 }
 
 const products = [
@@ -194,6 +219,7 @@ export default function ClothingStoreLanding() {
                             <div className="w-full h-fit group">
                               <div className="relative overflow-hidden">
                                 <img
+                                  loading="lazy"
                                   className="h-96 w-full object-cover"
                                   src={item.image}
                                   alt=""
@@ -253,6 +279,7 @@ export default function ClothingStoreLanding() {
             >
               <div className="md:w-1/2 mb-8 md:mb-0">
                 <img
+                  loading="lazy"
                   src={AboutImg}
                   alt="About Us"
                   className="rounded-lg shadow-lg max-h-[70vh] w-full object-cover"
