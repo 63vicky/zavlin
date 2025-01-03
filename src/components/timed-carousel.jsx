@@ -128,7 +128,7 @@ export default function TimedCarousel() {
         className="w-full h-full"
       >
         <CarouselContent
-          className="relative top-[100%] -translate-y-[50%]"
+          className="relative top-[100%] m-0 -translate-y-[50%]"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >

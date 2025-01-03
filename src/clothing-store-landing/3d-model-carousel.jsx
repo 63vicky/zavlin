@@ -82,7 +82,7 @@ const Scene = ({ color, shape }) => {
 
 export function ThreeDModelCarousel({ initialSlide = 0 }) {
   return (
-    <div className="h-[600px] md:h-[500px]">
+    <div className="h-[400px] md:h-[500px]">
       <Scene />
     </div>
   );

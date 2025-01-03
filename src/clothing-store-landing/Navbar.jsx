@@ -12,8 +12,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
-import Logo from 'src/assets/zavlish-removebg-preview.png';
-import LogoVid from 'src/assets/LogoV.mp4';
+import Logo from '../assets/zavlish-removebg-preview.png';
+import LogoVid from '../assets/LogoV.mp4';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
