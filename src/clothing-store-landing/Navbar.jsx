@@ -40,10 +40,12 @@ export default function Navbar() {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <h1
           className={`text-2xl font-bold transition-colors duration-300 ${
-            isScrolled ? 'text-foreground' : 'text-foreground/60'
+            isScrolled ? 'text-foreground' : 'text-foreground'
           }`}
         >
-          FashionFusion
+          {isScrolled ? <video src='src/assets/WhatsApp Video 2025-01-02 at 21.33.09_8842a83e.mp4' className='max-w-[150px] max-h-[100px]' loop='true'></video> : <img src='src/assets/zavlish-removebg-preview.png'  className='max-w-[150px]'/>
+}
+          {/* {isScrolled ? '' : 'Zevlin'} */}
         </h1>
         <nav className="hidden md:flex space-x-4">
           {['Home', 'Shop', 'About', 'Contact'].map((item) => (

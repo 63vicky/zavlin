@@ -174,7 +174,7 @@ export default function TimedCarousel() {
             key={index}
             variant=""
             size="sm"
-            className={`w-[80px] flex justify-start h-1 p-0 hover:bg-primary-foreground ${
+            className={`w-[40px] flex justify-start h-1 p-0 hover:bg-primary-foreground ${
               currentSlide === index ? 'bg-primary' : ''
             }`}
             onClick={() => goToSlide(index)}

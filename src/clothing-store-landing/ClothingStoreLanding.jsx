@@ -142,7 +142,7 @@ export default function ClothingStoreLanding() {
         {/* Hero Section with 3D Model */}
 
         <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/20 z-10">
+          <div className="absolute inset-0 bg-background z-10">
             <div className="container h-full mx-auto px-4 relative z-20 pt-16">
               <TimedCarousel />
             </div>
@@ -157,19 +157,19 @@ export default function ClothingStoreLanding() {
             <div className="">
               <Carousel
                 className="w-full mx-auto"
-                options={{
-                  align: 'center',
+                opts={{
+                  align: 'start',
                   loop: true,
                   slidesToScroll: 1,
-                  slidesToShow: { base: 2, md: 2, lg: 3 },
-                  spacing: 16,
+                  slidesToShow: { base: 3, md: 3, lg: 4 },
+                  spacing: 10,
                 }}
               >
                 <CarouselContent>
                   {products.map((item) => (
-                    <CarouselItem key={item.id} className="basis-1/3">
+                    <CarouselItem key={item.id} className="basis-1/4">
                       <Card className="border-0 border-gray-200 dark:border-gray-800">
-                        <CardContent className="p-6 flex items-center justify-center aspect-square flex-col">
+                        <CardContent className="p-0 flex items-center justify-center aspect-square flex-col">
                           <motion.div
                             className="overflow-hidden"
                             initial={{

@@ -46,10 +46,10 @@ const Scene = ({ color, shape }) => {
         shadow-mapSize-height={1024}
         shadow-camera-near={0.5}
         shadow-camera-far={5}
-        shadow-camera-left={-10}
-        shadow-camera-right={10}
+        shadow-camera-left={10}
+        shadow-camera-right={100}
         shadow-camera-top={100}
-        shadow-camera-bottom={-10}
+        shadow-camera-bottom={10}
       />
       <pointLight />
       <Suspense fallback={null}>
@@ -63,7 +63,7 @@ const Scene = ({ color, shape }) => {
         {/* Ground Plane */}
         <mesh
           rotation={[-Math.PI / 2, 0, 0]}
-          position={[0, -3, 0]}
+          position={[10, -30, 10]}
           receiveShadow
         >
           <planeGeometry args={[6, 10]} /> {/* Size of the plane */}
@@ -82,7 +82,7 @@ const Scene = ({ color, shape }) => {
 
 export function ThreeDModelCarousel({ initialSlide = 0 }) {
   return (
-    <div className="h-[300px] md:h-[400px]">
+    <div className="h-[600px] md:h-[500px]">
       <Scene />
     </div>
   );
