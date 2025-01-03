@@ -43,8 +43,16 @@ export default function Navbar() {
             isScrolled ? 'text-foreground' : 'text-foreground'
           }`}
         >
-          {isScrolled ? <video src='src/assets/WhatsApp Video 2025-01-02 at 21.33.09_8842a83e.mp4' className='max-w-[150px] max-h-[100px]' loop='true'></video> : <img src='src/assets/zavlish-removebg-preview.png'  className='max-w-[150px]'/>
-}
+          {isScrolled ? (
+            <video width={'50'} height={50} loop="false" autoPlay="true">
+              <source src="src/assets/LogoV.mp4" type="video/mp4" />
+            </video>
+          ) : (
+            <img
+              src="src/assets/zavlish-removebg-preview.png"
+              className="max-w-[150px]"
+            />
+          )}
           {/* {isScrolled ? '' : 'Zevlin'} */}
         </h1>
         <nav className="hidden md:flex space-x-4">
