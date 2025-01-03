@@ -37,7 +37,7 @@ import { Card, CardContent } from '@/components/ui/card';
 // 3D Model component
 export function Model() {
   const { scene } = useGLTF(
-    'src/assets/tripo_pbr_model_df0d8c31-cdd5-4277-b218-64bb8f8d704b.glb'
+    '/tripo_pbr_model_df0d8c31-cdd5-4277-b218-64bb8f8d704b.glb'
   );
   return <primitive object={scene} scale={6} />;
 
