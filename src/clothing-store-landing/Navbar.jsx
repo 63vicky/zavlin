@@ -12,6 +12,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
+import Logo from 'src/assets/zavlish-removebg-preview.png';
+import LogoVid from 'src/assets/LogoV.mp4';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -45,13 +47,10 @@ export default function Navbar() {
         >
           {isScrolled ? (
             <video width={'50'} height={50} loop="false" autoPlay="true">
-              <source src="src/assets/LogoV.mp4" type="video/mp4" />
+              <source src={LogoVid} type="video/mp4" />
             </video>
           ) : (
-            <img
-              src="src/assets/zavlish-removebg-preview.png"
-              className="max-w-[150px]"
-            />
+            <img src={Logo} className="max-w-[150px]" />
           )}
           {/* {isScrolled ? '' : 'Zevlin'} */}
         </h1>

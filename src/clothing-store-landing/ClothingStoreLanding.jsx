@@ -14,7 +14,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-
+import AboutImg from '../src/assets/06_AboutUs_Fabrics2_410x.webp';
 import { ThemeProvider } from './Theme-provider';
 import Navbar from './Navbar';
 import img1 from '../assets/product01.jpg';
@@ -23,7 +23,7 @@ import img3 from '../assets/product03.jpg';
 import img4 from '../assets/product02.jpg';
 import img5 from '../assets/product01.jpg';
 import img6 from '../assets/product03.jpg';
-import ProductCarousel from './ProductCarousel';
+import glbModel from 'src/assets/tripo_pbr_model_df0d8c31-cdd5-4277-b218-64bb8f8d704b.glb';
 import TimedCarousel from '../components/timed-carousel';
 import {
   Carousel,
@@ -36,9 +36,7 @@ import { Card, CardContent } from '@/components/ui/card';
 
 // 3D Model component
 export function Model() {
-  const { scene } = useGLTF(
-    'src/assets/tripo_pbr_model_df0d8c31-cdd5-4277-b218-64bb8f8d704b.glb'
-  );
+  const { scene } = useGLTF(glbModel);
   return <primitive object={scene} scale={6} />;
 
   // return (
@@ -250,7 +248,7 @@ export default function ClothingStoreLanding() {
             >
               <div className="md:w-1/2 mb-8 md:mb-0">
                 <img
-                  src="../src/assets/06_AboutUs_Fabrics2_410x.webp"
+                  src={AboutImg}
                   alt="About Us"
                   className="rounded-lg shadow-lg max-h-[70vh] w-full object-cover"
                 />
